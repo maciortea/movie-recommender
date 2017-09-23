@@ -1,0 +1,49 @@
+﻿@model System.Collections.IDictionary
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+    <div class="col-lg-4">
+        <div class="pre-scrollable">
+            <ul id="SelectedMovies" class="list-group"></ul>
+        </div>
+
+        <div class="input-group search-movie">
+            <span class="input-group-addon" id="basic-addon1"><i class="glyphicon glyphicon-search"></i></span>
+            <input type="text" id="SearchMovie" class="form-control" placeholder="Search movies" aria-describedby="basic-addon1">
+        </div>
+
+        <a href="javascript:void(0)" class="recommend btn btn-large btn-info">Recommend movies</a>
+    </div>
+</div>
+
+<div id="RecommendedMoviesDialog" class="modal fade">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h3>Recommended movies</h3>
+            </div>
+
+            <div class="modal-body">
+                <table id="RecommendedMovies" class="table"></table>
+            </div>
+            <div class="modal-footer">
+                <a href="#" class="btn btn-primary" data-dismiss="modal">Done</a>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+@section scripts {
+<script>
+    $(document).ready(function () {
+        Movie.init();
+    });
+</script>
+}
