@@ -1,5 +1,3 @@
-using System;
-
 namespace MovieRecommender.Web.Models
 {
     public class ErrorViewModel
